@@ -1,0 +1,62 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\GitHub\\POSTTEST_VIS\\Kelas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E003B058-51DE-42D3-9957-0B6A8B47AD28}|Kelas\\Kelas.vbproj|c:\\users\\asus\\documents\\github\\posttest_vis\\kelas\\kelas\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{E003B058-51DE-42D3-9957-0B6A8B47AD28}|Kelas\\Kelas.vbproj|solutionrelative:kelas\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\GitHub\\POSTTEST_VIS\\Kelas\\Kelas\\Form1.vb",
+              "RelativeDocumentMoniker": "Kelas\\Form1.vb",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\GitHub\\POSTTEST_VIS\\Kelas\\Kelas\\Form1.vb [Design]",
+              "RelativeToolTip": "Kelas\\Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-03-04T02:45:48.164Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
