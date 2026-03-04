@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Kelas"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+074d63b9b74d869dc79e24f560bb949154ebeb06"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7dd2a2f800b28fe5c8590f901b04bc3b30b038e"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Kelas"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Kelas"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
