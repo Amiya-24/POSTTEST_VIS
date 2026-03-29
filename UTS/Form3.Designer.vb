@@ -78,7 +78,7 @@ Partial Class Form3
         lblPredikat.AutoSize = True
         lblPredikat.BackColor = Color.Transparent
         lblPredikat.Font = New Font("Segoe UI", 12F, FontStyle.Bold)
-        lblPredikat.Location = New Point(389, 363)
+        lblPredikat.Location = New Point(380, 358)
         lblPredikat.Name = "lblPredikat"
         lblPredikat.Size = New Size(60, 21)
         lblPredikat.TabIndex = 4
