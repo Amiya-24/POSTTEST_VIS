@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("UTS"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2233646d7c3eeb8e5e3bb4a78642b0939246617b"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a8372f8f007700ceccb59c029a485dc001414a4"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("UTS"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("UTS"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
