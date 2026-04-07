@@ -85,6 +85,7 @@ Partial Class FormInput
         ' 
         ' tpDataUtama
         ' 
+        tpDataUtama.BackgroundImageLayout = ImageLayout.Stretch
         tpDataUtama.Controls.Add(lblJenisKelamin)
         tpDataUtama.Controls.Add(lblKomunitas)
         tpDataUtama.Controls.Add(lblTanggalLahir)
@@ -312,9 +313,9 @@ Partial Class FormInput
         chk8.AutoSize = True
         chk8.Location = New Point(156, 116)
         chk8.Name = "chk8"
-        chk8.Size = New Size(84, 19)
+        chk8.Size = New Size(74, 19)
         chk8.TabIndex = 7
-        chk8.Text = "CheckBox8"
+        chk8.Text = "Olahraga"
         chk8.UseVisualStyleBackColor = True
         ' 
         ' chk7
@@ -322,9 +323,9 @@ Partial Class FormInput
         chk7.AutoSize = True
         chk7.Location = New Point(156, 82)
         chk7.Name = "chk7"
-        chk7.Size = New Size(84, 19)
+        chk7.Size = New Size(76, 19)
         chk7.TabIndex = 6
-        chk7.Text = "CheckBox7"
+        chk7.Text = "Berakting"
         chk7.UseVisualStyleBackColor = True
         ' 
         ' chk6
@@ -332,9 +333,9 @@ Partial Class FormInput
         chk6.AutoSize = True
         chk6.Location = New Point(156, 47)
         chk6.Name = "chk6"
-        chk6.Size = New Size(84, 19)
+        chk6.Size = New Size(70, 19)
         chk6.TabIndex = 5
-        chk6.Text = "CheckBox6"
+        chk6.Text = "Bermain"
         chk6.UseVisualStyleBackColor = True
         ' 
         ' chk5
@@ -342,9 +343,9 @@ Partial Class FormInput
         chk5.AutoSize = True
         chk5.Location = New Point(156, 16)
         chk5.Name = "chk5"
-        chk5.Size = New Size(84, 19)
+        chk5.Size = New Size(78, 19)
         chk5.TabIndex = 4
-        chk5.Text = "CheckBox5"
+        chk5.Text = "Bernyanyi"
         chk5.UseVisualStyleBackColor = True
         ' 
         ' chk4
@@ -352,9 +353,9 @@ Partial Class FormInput
         chk4.AutoSize = True
         chk4.Location = New Point(6, 116)
         chk4.Name = "chk4"
-        chk4.Size = New Size(84, 19)
+        chk4.Size = New Size(91, 19)
         chk4.TabIndex = 3
-        chk4.Text = "CheckBox4"
+        chk4.Text = "Mengambar"
         chk4.UseVisualStyleBackColor = True
         ' 
         ' chk3
@@ -362,9 +363,9 @@ Partial Class FormInput
         chk3.AutoSize = True
         chk3.Location = New Point(6, 47)
         chk3.Name = "chk3"
-        chk3.Size = New Size(84, 19)
+        chk3.Size = New Size(68, 19)
         chk3.TabIndex = 2
-        chk3.Text = "CheckBox3"
+        chk3.Text = "Menulis"
         chk3.UseVisualStyleBackColor = True
         ' 
         ' chk2
@@ -372,9 +373,9 @@ Partial Class FormInput
         chk2.AutoSize = True
         chk2.Location = New Point(6, 82)
         chk2.Name = "chk2"
-        chk2.Size = New Size(84, 19)
+        chk2.Size = New Size(67, 19)
         chk2.TabIndex = 1
-        chk2.Text = "CheckBox2"
+        chk2.Text = "Melukis"
         chk2.UseVisualStyleBackColor = True
         ' 
         ' chk1
@@ -382,9 +383,9 @@ Partial Class FormInput
         chk1.AutoSize = True
         chk1.Location = New Point(6, 16)
         chk1.Name = "chk1"
-        chk1.Size = New Size(84, 19)
+        chk1.Size = New Size(79, 19)
         chk1.TabIndex = 0
-        chk1.Text = "CheckBox1"
+        chk1.Text = "Membaca"
         chk1.UseVisualStyleBackColor = True
         ' 
         ' gbPeran
@@ -404,10 +405,10 @@ Partial Class FormInput
         rbAdmin.AutoSize = True
         rbAdmin.Location = New Point(6, 82)
         rbAdmin.Name = "rbAdmin"
-        rbAdmin.Size = New Size(97, 19)
+        rbAdmin.Size = New Size(61, 19)
         rbAdmin.TabIndex = 2
         rbAdmin.TabStop = True
-        rbAdmin.Text = "RadioButton3"
+        rbAdmin.Text = "Admin"
         rbAdmin.UseVisualStyleBackColor = True
         ' 
         ' rbAnggota
@@ -415,10 +416,10 @@ Partial Class FormInput
         rbAnggota.AutoSize = True
         rbAnggota.Location = New Point(6, 47)
         rbAnggota.Name = "rbAnggota"
-        rbAnggota.Size = New Size(97, 19)
+        rbAnggota.Size = New Size(71, 19)
         rbAnggota.TabIndex = 1
         rbAnggota.TabStop = True
-        rbAnggota.Text = "RadioButton2"
+        rbAnggota.Text = "Anggota"
         rbAnggota.UseVisualStyleBackColor = True
         ' 
         ' rbKetua
@@ -426,10 +427,10 @@ Partial Class FormInput
         rbKetua.AutoSize = True
         rbKetua.Location = New Point(6, 16)
         rbKetua.Name = "rbKetua"
-        rbKetua.Size = New Size(97, 19)
+        rbKetua.Size = New Size(55, 19)
         rbKetua.TabIndex = 0
         rbKetua.TabStop = True
-        rbKetua.Text = "RadioButton1"
+        rbKetua.Text = "Ketua"
         rbKetua.UseVisualStyleBackColor = True
         ' 
         ' btnBrowse
@@ -461,8 +462,10 @@ Partial Class FormInput
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(486, 381)
         Controls.Add(TabControl1)
+        DoubleBuffered = True
         Name = "FormInput"
         Text = "FormInput"
         TabControl1.ResumeLayout(False)

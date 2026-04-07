@@ -84,10 +84,10 @@
                 FormUtama.dataSementara = $"Nama: {txtNama.Text}, ID: {txtID.Text}, Komunitas: {cbKomunitas.Text}"
 
                 ' Kirim data ke Form Hasil
-                FormHasil.lblNama.Text = txtNama.Text
+                FormHasil.lblNama.Text = "Nama: " & txtNama.Text
                 FormHasil.lblID.Text = "ID: " & txtID.Text
-                FormHasil.lblKomunitas.Text = cbKomunitas.Text
-                FormHasil.lblKontak.Text = txtEmail.Text & " | " & mtbTelepon.Text
+                FormHasil.lblKomunitas.Text = "Komunitas: " & cbKomunitas.Text
+                FormHasil.lblKontak.Text = "Gmail & No Telepon: " & txtEmail.Text & " | " & mtbTelepon.Text
                 FormHasil.lblHobby.Text = "Aktivitas: " & hobiList.TrimEnd(","c, " "c)
                 FormHasil.lblAlamat.Text = "Alamat: " & txtAlamat.Text
                 FormHasil.lblJenisKelamin.Text = "Jenis Kelamin: " & If(rbLaki.Checked, "Laki-laki", "Perempuan")

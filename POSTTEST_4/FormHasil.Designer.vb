@@ -36,16 +36,17 @@ Partial Class FormHasil
         ' 
         ' pbFotoHasil
         ' 
-        pbFotoHasil.Location = New Point(12, 12)
+        pbFotoHasil.Location = New Point(12, 101)
         pbFotoHasil.Name = "pbFotoHasil"
-        pbFotoHasil.Size = New Size(211, 282)
+        pbFotoHasil.Size = New Size(172, 193)
         pbFotoHasil.TabIndex = 0
         pbFotoHasil.TabStop = False
         ' 
         ' lblNama
         ' 
         lblNama.AutoSize = True
-        lblNama.Location = New Point(248, 12)
+        lblNama.BackColor = Color.White
+        lblNama.Location = New Point(201, 124)
         lblNama.Name = "lblNama"
         lblNama.Size = New Size(41, 15)
         lblNama.TabIndex = 1
@@ -54,7 +55,8 @@ Partial Class FormHasil
         ' lblID
         ' 
         lblID.AutoSize = True
-        lblID.Location = New Point(248, 48)
+        lblID.BackColor = Color.White
+        lblID.Location = New Point(201, 158)
         lblID.Name = "lblID"
         lblID.Size = New Size(41, 15)
         lblID.TabIndex = 2
@@ -63,7 +65,8 @@ Partial Class FormHasil
         ' lblKomunitas
         ' 
         lblKomunitas.AutoSize = True
-        lblKomunitas.Location = New Point(248, 82)
+        lblKomunitas.BackColor = Color.White
+        lblKomunitas.Location = New Point(434, 158)
         lblKomunitas.Name = "lblKomunitas"
         lblKomunitas.Size = New Size(41, 15)
         lblKomunitas.TabIndex = 3
@@ -72,7 +75,8 @@ Partial Class FormHasil
         ' lblHobby
         ' 
         lblHobby.AutoSize = True
-        lblHobby.Location = New Point(248, 117)
+        lblHobby.BackColor = Color.White
+        lblHobby.Location = New Point(434, 191)
         lblHobby.Name = "lblHobby"
         lblHobby.Size = New Size(41, 15)
         lblHobby.TabIndex = 4
@@ -81,7 +85,8 @@ Partial Class FormHasil
         ' lblAlamat
         ' 
         lblAlamat.AutoSize = True
-        lblAlamat.Location = New Point(248, 157)
+        lblAlamat.BackColor = Color.White
+        lblAlamat.Location = New Point(434, 124)
         lblAlamat.Name = "lblAlamat"
         lblAlamat.Size = New Size(41, 15)
         lblAlamat.TabIndex = 5
@@ -90,7 +95,8 @@ Partial Class FormHasil
         ' lblKontak
         ' 
         lblKontak.AutoSize = True
-        lblKontak.Location = New Point(248, 196)
+        lblKontak.BackColor = Color.White
+        lblKontak.Location = New Point(201, 191)
         lblKontak.Name = "lblKontak"
         lblKontak.Size = New Size(41, 15)
         lblKontak.TabIndex = 6
@@ -99,7 +105,8 @@ Partial Class FormHasil
         ' lblTanggalLahir
         ' 
         lblTanggalLahir.AutoSize = True
-        lblTanggalLahir.Location = New Point(248, 239)
+        lblTanggalLahir.BackColor = Color.White
+        lblTanggalLahir.Location = New Point(201, 227)
         lblTanggalLahir.Name = "lblTanggalLahir"
         lblTanggalLahir.Size = New Size(41, 15)
         lblTanggalLahir.TabIndex = 7
@@ -108,7 +115,8 @@ Partial Class FormHasil
         ' lblJenisKelamin
         ' 
         lblJenisKelamin.AutoSize = True
-        lblJenisKelamin.Location = New Point(248, 279)
+        lblJenisKelamin.BackColor = Color.White
+        lblJenisKelamin.Location = New Point(201, 262)
         lblJenisKelamin.Name = "lblJenisKelamin"
         lblJenisKelamin.Size = New Size(41, 15)
         lblJenisKelamin.TabIndex = 8
@@ -118,6 +126,8 @@ Partial Class FormHasil
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.form_kartu_2
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(650, 308)
         Controls.Add(lblJenisKelamin)
         Controls.Add(lblTanggalLahir)
@@ -128,6 +138,7 @@ Partial Class FormHasil
         Controls.Add(lblID)
         Controls.Add(lblNama)
         Controls.Add(pbFotoHasil)
+        DoubleBuffered = True
         Name = "FormHasil"
         Text = "FormHasil"
         CType(pbFotoHasil, ComponentModel.ISupportInitialize).EndInit()

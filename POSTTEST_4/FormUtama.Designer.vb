@@ -35,6 +35,8 @@ Partial Class FormUtama
         ' 
         ' MenuStrip1
         ' 
+        MenuStrip1.BackColor = SystemColors.Window
+        MenuStrip1.BackgroundImageLayout = ImageLayout.None
         MenuStrip1.Items.AddRange(New ToolStripItem() {menuInput, menuLihat, menuSimpan, menuBuka, menuKeluar})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
@@ -80,8 +82,11 @@ Partial Class FormUtama
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = My.Resources.Resources.form_utama
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(568, 318)
         Controls.Add(MenuStrip1)
+        DoubleBuffered = True
         MainMenuStrip = MenuStrip1
         Name = "FormUtama"
         Text = "FormUtama"
