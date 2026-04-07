@@ -26,12 +26,12 @@ Partial Class FormInput
         TabControl1 = New TabControl()
         tpDataUtama = New TabPage()
         lblJenisKelamin = New Label()
-        lblKomunitas = New Label()
+        lblDivisi = New Label()
         lblTanggalLahir = New Label()
         lblID = New Label()
         lblNama = New Label()
         rbPerempuan = New RadioButton()
-        cbKomunitas = New ComboBox()
+        cbDivisi = New ComboBox()
         rbLaki = New RadioButton()
         dtpTanggalLahir = New DateTimePicker()
         txtID = New TextBox()
@@ -55,13 +55,15 @@ Partial Class FormInput
         chk2 = New CheckBox()
         chk1 = New CheckBox()
         gbPeran = New GroupBox()
-        rbAdmin = New RadioButton()
+        rbKetuaDivisi = New RadioButton()
         rbAnggota = New RadioButton()
-        rbKetua = New RadioButton()
+        rbKetuaYayasan = New RadioButton()
         btnBrowse = New Button()
         pbFoto = New PictureBox()
         ErrorProvider1 = New ErrorProvider(components)
         OpenFileDialog1 = New OpenFileDialog()
+        rbDonatur = New RadioButton()
+        rbRelawan = New RadioButton()
         TabControl1.SuspendLayout()
         tpDataUtama.SuspendLayout()
         tpKontakdanInfo.SuspendLayout()
@@ -80,19 +82,19 @@ Partial Class FormInput
         TabControl1.Location = New Point(12, 12)
         TabControl1.Name = "TabControl1"
         TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(462, 357)
+        TabControl1.Size = New Size(462, 337)
         TabControl1.TabIndex = 2
         ' 
         ' tpDataUtama
         ' 
         tpDataUtama.BackgroundImageLayout = ImageLayout.Stretch
         tpDataUtama.Controls.Add(lblJenisKelamin)
-        tpDataUtama.Controls.Add(lblKomunitas)
+        tpDataUtama.Controls.Add(lblDivisi)
         tpDataUtama.Controls.Add(lblTanggalLahir)
         tpDataUtama.Controls.Add(lblID)
         tpDataUtama.Controls.Add(lblNama)
         tpDataUtama.Controls.Add(rbPerempuan)
-        tpDataUtama.Controls.Add(cbKomunitas)
+        tpDataUtama.Controls.Add(cbDivisi)
         tpDataUtama.Controls.Add(rbLaki)
         tpDataUtama.Controls.Add(dtpTanggalLahir)
         tpDataUtama.Controls.Add(txtID)
@@ -114,14 +116,14 @@ Partial Class FormInput
         lblJenisKelamin.TabIndex = 10
         lblJenisKelamin.Text = "Jenis Kelamin"
         ' 
-        ' lblKomunitas
+        ' lblDivisi
         ' 
-        lblKomunitas.AutoSize = True
-        lblKomunitas.Location = New Point(34, 173)
-        lblKomunitas.Name = "lblKomunitas"
-        lblKomunitas.Size = New Size(64, 15)
-        lblKomunitas.TabIndex = 9
-        lblKomunitas.Text = "Komunitas"
+        lblDivisi.AutoSize = True
+        lblDivisi.Location = New Point(34, 173)
+        lblDivisi.Name = "lblDivisi"
+        lblDivisi.Size = New Size(35, 15)
+        lblDivisi.TabIndex = 9
+        lblDivisi.Text = "Divisi"
         ' 
         ' lblTanggalLahir
         ' 
@@ -161,13 +163,14 @@ Partial Class FormInput
         rbPerempuan.Text = "Perempuan"
         rbPerempuan.UseVisualStyleBackColor = True
         ' 
-        ' cbKomunitas
+        ' cbDivisi
         ' 
-        cbKomunitas.FormattingEnabled = True
-        cbKomunitas.Location = New Point(191, 170)
-        cbKomunitas.Name = "cbKomunitas"
-        cbKomunitas.Size = New Size(200, 23)
-        cbKomunitas.TabIndex = 4
+        cbDivisi.FormattingEnabled = True
+        cbDivisi.Items.AddRange(New Object() {"Divisi Pendidikan & Pelatihan", "Divisi Sosial & Kemanusiaan", "Divisi Dakwah & Kajian Islami", "Divisi ZISWAF (Zakat, Infaq, Sadaqah & Wakaf)", "Divisi Pemberdayaan Ekonomi", "Divisi Humas & Media Komunikasi", "Divisi Administrasi & Keuangan", "Divisi Pemeliharaan & Sarana Prasarana"})
+        cbDivisi.Location = New Point(191, 170)
+        cbDivisi.Name = "cbDivisi"
+        cbDivisi.Size = New Size(200, 23)
+        cbDivisi.TabIndex = 4
         ' 
         ' rbLaki
         ' 
@@ -277,14 +280,14 @@ Partial Class FormInput
         tpProfil.Location = New Point(4, 24)
         tpProfil.Name = "tpProfil"
         tpProfil.Padding = New Padding(3)
-        tpProfil.Size = New Size(454, 329)
+        tpProfil.Size = New Size(454, 309)
         tpProfil.TabIndex = 2
         tpProfil.Text = "Profil & Aktifitas"
         tpProfil.UseVisualStyleBackColor = True
         ' 
         ' btnSimpanCetak
         ' 
-        btnSimpanCetak.Location = New Point(369, 298)
+        btnSimpanCetak.Location = New Point(367, 279)
         btnSimpanCetak.Name = "btnSimpanCetak"
         btnSimpanCetak.Size = New Size(81, 23)
         btnSimpanCetak.TabIndex = 4
@@ -301,7 +304,7 @@ Partial Class FormInput
         gbHobby.Controls.Add(chk3)
         gbHobby.Controls.Add(chk2)
         gbHobby.Controls.Add(chk1)
-        gbHobby.Location = New Point(187, 151)
+        gbHobby.Location = New Point(187, 117)
         gbHobby.Name = "gbHobby"
         gbHobby.Size = New Size(261, 141)
         gbHobby.TabIndex = 3
@@ -390,31 +393,33 @@ Partial Class FormInput
         ' 
         ' gbPeran
         ' 
-        gbPeran.Controls.Add(rbAdmin)
+        gbPeran.Controls.Add(rbRelawan)
+        gbPeran.Controls.Add(rbDonatur)
+        gbPeran.Controls.Add(rbKetuaDivisi)
         gbPeran.Controls.Add(rbAnggota)
-        gbPeran.Controls.Add(rbKetua)
+        gbPeran.Controls.Add(rbKetuaYayasan)
         gbPeran.Location = New Point(187, 18)
         gbPeran.Name = "gbPeran"
-        gbPeran.Size = New Size(261, 117)
+        gbPeran.Size = New Size(261, 93)
         gbPeran.TabIndex = 2
         gbPeran.TabStop = False
         gbPeran.Text = "Peran"
         ' 
-        ' rbAdmin
+        ' rbKetuaDivisi
         ' 
-        rbAdmin.AutoSize = True
-        rbAdmin.Location = New Point(6, 82)
-        rbAdmin.Name = "rbAdmin"
-        rbAdmin.Size = New Size(61, 19)
-        rbAdmin.TabIndex = 2
-        rbAdmin.TabStop = True
-        rbAdmin.Text = "Admin"
-        rbAdmin.UseVisualStyleBackColor = True
+        rbKetuaDivisi.AutoSize = True
+        rbKetuaDivisi.Location = New Point(6, 41)
+        rbKetuaDivisi.Name = "rbKetuaDivisi"
+        rbKetuaDivisi.Size = New Size(86, 19)
+        rbKetuaDivisi.TabIndex = 2
+        rbKetuaDivisi.TabStop = True
+        rbKetuaDivisi.Text = "Ketua Divisi"
+        rbKetuaDivisi.UseVisualStyleBackColor = True
         ' 
         ' rbAnggota
         ' 
         rbAnggota.AutoSize = True
-        rbAnggota.Location = New Point(6, 47)
+        rbAnggota.Location = New Point(155, 16)
         rbAnggota.Name = "rbAnggota"
         rbAnggota.Size = New Size(71, 19)
         rbAnggota.TabIndex = 1
@@ -422,16 +427,16 @@ Partial Class FormInput
         rbAnggota.Text = "Anggota"
         rbAnggota.UseVisualStyleBackColor = True
         ' 
-        ' rbKetua
+        ' rbKetuaYayasan
         ' 
-        rbKetua.AutoSize = True
-        rbKetua.Location = New Point(6, 16)
-        rbKetua.Name = "rbKetua"
-        rbKetua.Size = New Size(55, 19)
-        rbKetua.TabIndex = 0
-        rbKetua.TabStop = True
-        rbKetua.Text = "Ketua"
-        rbKetua.UseVisualStyleBackColor = True
+        rbKetuaYayasan.AutoSize = True
+        rbKetuaYayasan.Location = New Point(6, 16)
+        rbKetuaYayasan.Name = "rbKetuaYayasan"
+        rbKetuaYayasan.Size = New Size(100, 19)
+        rbKetuaYayasan.TabIndex = 0
+        rbKetuaYayasan.TabStop = True
+        rbKetuaYayasan.Text = "Ketua Yayasan"
+        rbKetuaYayasan.UseVisualStyleBackColor = True
         ' 
         ' btnBrowse
         ' 
@@ -444,6 +449,7 @@ Partial Class FormInput
         ' 
         ' pbFoto
         ' 
+        pbFoto.BorderStyle = BorderStyle.FixedSingle
         pbFoto.Location = New Point(17, 18)
         pbFoto.Name = "pbFoto"
         pbFoto.Size = New Size(151, 199)
@@ -458,12 +464,34 @@ Partial Class FormInput
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
+        ' rbDonatur
+        ' 
+        rbDonatur.AutoSize = True
+        rbDonatur.Location = New Point(155, 41)
+        rbDonatur.Name = "rbDonatur"
+        rbDonatur.Size = New Size(68, 19)
+        rbDonatur.TabIndex = 3
+        rbDonatur.TabStop = True
+        rbDonatur.Text = "Donatur"
+        rbDonatur.UseVisualStyleBackColor = True
+        ' 
+        ' rbRelawan
+        ' 
+        rbRelawan.AutoSize = True
+        rbRelawan.Location = New Point(6, 66)
+        rbRelawan.Name = "rbRelawan"
+        rbRelawan.Size = New Size(69, 19)
+        rbRelawan.TabIndex = 4
+        rbRelawan.TabStop = True
+        rbRelawan.Text = "Relawan"
+        rbRelawan.UseVisualStyleBackColor = True
+        ' 
         ' FormInput
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(486, 381)
+        ClientSize = New Size(486, 351)
         Controls.Add(TabControl1)
         DoubleBuffered = True
         Name = "FormInput"
@@ -486,7 +514,7 @@ Partial Class FormInput
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents tpDataUtama As TabPage
     Friend WithEvents rbPerempuan As RadioButton
-    Friend WithEvents cbKomunitas As ComboBox
+    Friend WithEvents cbDivisi As ComboBox
     Friend WithEvents rbLaki As RadioButton
     Friend WithEvents dtpTanggalLahir As DateTimePicker
     Friend WithEvents txtID As TextBox
@@ -507,9 +535,9 @@ Partial Class FormInput
     Friend WithEvents chk2 As CheckBox
     Friend WithEvents chk1 As CheckBox
     Friend WithEvents gbPeran As GroupBox
-    Friend WithEvents rbAdmin As RadioButton
+    Friend WithEvents rbKetuaDivisi As RadioButton
     Friend WithEvents rbAnggota As RadioButton
-    Friend WithEvents rbKetua As RadioButton
+    Friend WithEvents rbKetuaYayasan As RadioButton
     Friend WithEvents btnBrowse As Button
     Friend WithEvents pbFoto As PictureBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
@@ -518,8 +546,10 @@ Partial Class FormInput
     Friend WithEvents lblAlamat As Label
     Friend WithEvents lblTelepon As Label
     Friend WithEvents lblJenisKelamin As Label
-    Friend WithEvents lblKomunitas As Label
+    Friend WithEvents lblDivisi As Label
     Friend WithEvents lblTanggalLahir As Label
     Friend WithEvents lblID As Label
     Friend WithEvents lblNama As Label
+    Friend WithEvents rbRelawan As RadioButton
+    Friend WithEvents rbDonatur As RadioButton
 End Class

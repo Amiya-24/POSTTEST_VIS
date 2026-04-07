@@ -1,5 +1,4 @@
 ﻿Public Class FormUtama
-    ' Variabel global (opsional) untuk menyimpan data sementara jika belum masuk form hasil
     Public Shared dataSementara As String = ""
 
     Private Sub menuInput_Click(sender As Object, e As EventArgs) Handles menuInput.Click
@@ -14,7 +13,6 @@
         SaveFileDialog1.Filter = "Text File *.txt|CSV File *.csv"
         SaveFileDialog1.Title = "Simpan Data Komunitas"
 
-        ' Memeriksa pilihan tombol dari MessageBox menggunakan DialogResult
         If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
             System.IO.File.WriteAllText(SaveFileDialog1.FileName, dataSementara)
             MessageBox.Show("File berhasil disimpan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
