@@ -84,7 +84,7 @@ Partial Class FormUtama
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "FormUtama"
-        Text = "Form1"
+        Text = "FormUtama"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
         ResumeLayout(False)
