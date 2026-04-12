@@ -1,6 +1,5 @@
 ﻿Public Class FormUtama
     Private Sub DataAlatBeratToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlatBeratToolStripMenuItem.Click
-        ' Membuka form CRUD
         FormAlatBerat.Show()
     End Sub
 

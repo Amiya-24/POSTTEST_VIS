@@ -25,9 +25,9 @@ Partial Class FormUtama
         MenuStrip1 = New MenuStrip()
         ManajemenDataToolStripMenuItem = New ToolStripMenuItem()
         AlatBeratToolStripMenuItem = New ToolStripMenuItem()
-        KeluarToolStripMenuItem = New ToolStripMenuItem()
         BantuanToolStripMenuItem = New ToolStripMenuItem()
         TentangSistemToolStripMenuItem = New ToolStripMenuItem()
+        KeluarToolStripMenuItem = New ToolStripMenuItem()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -36,7 +36,7 @@ Partial Class FormUtama
         MenuStrip1.Items.AddRange(New ToolStripItem() {ManajemenDataToolStripMenuItem, BantuanToolStripMenuItem, KeluarToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.Size = New Size(425, 24)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -53,12 +53,6 @@ Partial Class FormUtama
         AlatBeratToolStripMenuItem.Size = New Size(125, 22)
         AlatBeratToolStripMenuItem.Text = "Alat Berat"
         ' 
-        ' KeluarToolStripMenuItem
-        ' 
-        KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
-        KeluarToolStripMenuItem.Size = New Size(52, 20)
-        KeluarToolStripMenuItem.Text = "Keluar"
-        ' 
         ' BantuanToolStripMenuItem
         ' 
         BantuanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TentangSistemToolStripMenuItem})
@@ -69,14 +63,20 @@ Partial Class FormUtama
         ' TentangSistemToolStripMenuItem
         ' 
         TentangSistemToolStripMenuItem.Name = "TentangSistemToolStripMenuItem"
-        TentangSistemToolStripMenuItem.Size = New Size(180, 22)
+        TentangSistemToolStripMenuItem.Size = New Size(155, 22)
         TentangSistemToolStripMenuItem.Text = "Tentang Sistem"
+        ' 
+        ' KeluarToolStripMenuItem
+        ' 
+        KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        KeluarToolStripMenuItem.Size = New Size(52, 20)
+        KeluarToolStripMenuItem.Text = "Keluar"
         ' 
         ' FormUtama
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(425, 252)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "FormUtama"
