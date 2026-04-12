@@ -22,16 +22,76 @@ Partial Class FormUtama
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        MenuStrip1 = New MenuStrip()
+        ManajemenDataToolStripMenuItem = New ToolStripMenuItem()
+        AlatBeratToolStripMenuItem = New ToolStripMenuItem()
+        KeluarToolStripMenuItem = New ToolStripMenuItem()
+        BantuanToolStripMenuItem = New ToolStripMenuItem()
+        TentangSistemToolStripMenuItem = New ToolStripMenuItem()
+        MenuStrip1.SuspendLayout()
         SuspendLayout()
+        ' 
+        ' MenuStrip1
+        ' 
+        MenuStrip1.Items.AddRange(New ToolStripItem() {ManajemenDataToolStripMenuItem, BantuanToolStripMenuItem, KeluarToolStripMenuItem})
+        MenuStrip1.Location = New Point(0, 0)
+        MenuStrip1.Name = "MenuStrip1"
+        MenuStrip1.Size = New Size(800, 24)
+        MenuStrip1.TabIndex = 0
+        MenuStrip1.Text = "MenuStrip1"
+        ' 
+        ' ManajemenDataToolStripMenuItem
+        ' 
+        ManajemenDataToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {AlatBeratToolStripMenuItem})
+        ManajemenDataToolStripMenuItem.Name = "ManajemenDataToolStripMenuItem"
+        ManajemenDataToolStripMenuItem.Size = New Size(109, 20)
+        ManajemenDataToolStripMenuItem.Text = "Manajemen Data"
+        ' 
+        ' AlatBeratToolStripMenuItem
+        ' 
+        AlatBeratToolStripMenuItem.Name = "AlatBeratToolStripMenuItem"
+        AlatBeratToolStripMenuItem.Size = New Size(125, 22)
+        AlatBeratToolStripMenuItem.Text = "Alat Berat"
+        ' 
+        ' KeluarToolStripMenuItem
+        ' 
+        KeluarToolStripMenuItem.Name = "KeluarToolStripMenuItem"
+        KeluarToolStripMenuItem.Size = New Size(52, 20)
+        KeluarToolStripMenuItem.Text = "Keluar"
+        ' 
+        ' BantuanToolStripMenuItem
+        ' 
+        BantuanToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TentangSistemToolStripMenuItem})
+        BantuanToolStripMenuItem.Name = "BantuanToolStripMenuItem"
+        BantuanToolStripMenuItem.Size = New Size(63, 20)
+        BantuanToolStripMenuItem.Text = "Bantuan"
+        ' 
+        ' TentangSistemToolStripMenuItem
+        ' 
+        TentangSistemToolStripMenuItem.Name = "TentangSistemToolStripMenuItem"
+        TentangSistemToolStripMenuItem.Size = New Size(180, 22)
+        TentangSistemToolStripMenuItem.Text = "Tentang Sistem"
         ' 
         ' FormUtama
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
+        Controls.Add(MenuStrip1)
+        MainMenuStrip = MenuStrip1
         Name = "FormUtama"
         Text = "FormUtama"
+        MenuStrip1.ResumeLayout(False)
+        MenuStrip1.PerformLayout()
         ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ManajemenDataToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AlatBeratToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents KeluarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BantuanToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TentangSistemToolStripMenuItem As ToolStripMenuItem
 
 End Class
