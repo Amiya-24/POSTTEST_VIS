@@ -1,92 +1,127 @@
-﻿Public Class Form1
-    Private Sub Kosong()
+﻿Imports System.Data
+
+Public Class Form1
+    ' --- Inisialisasi & Event Utama ---
+
+    Private Sub FormJenisBuku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TampilData()
+        KosongkanForm()
+    End Sub
+
+    ' --- Prosedur & Fungsi Pendukung ---
+
+    ''' <summary>
+    ''' Membersihkan semua inputan pada form
+    ''' </summary>
+    Private Sub KosongkanForm()
         txtKodeJenis.Clear()
         txtJenis.Clear()
         txtSearch.Clear()
         ErrorProvider1.Clear()
         txtKodeJenis.Focus()
     End Sub
+
+    ''' <summary>
+    ''' Memperbarui tampilan grid dengan data terbaru
+    ''' </summary>
     Private Sub TampilData()
-        dgvJenis.DataSource = GetAllJenis()
+        Try
+            dgvJenis.DataSource = GetAllJenis()
+        Catch ex As Exception
+            MessageBox.Show("Gagal memuat data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-    Private Sub FormJenisBuku_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TampilData()
-        Kosong()
-    End Sub
+
+    ' --- Event Handler Tombol ---
+
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         ErrorProvider1.Clear()
+
+        ' Validasi Input
         If Not ValidasiJenisBuku(ErrorProvider1, txtKodeJenis, txtJenis) Then Exit Sub
 
         Dim kode As String = txtKodeJenis.Text.Trim()
-            Dim namaJenis As String = txtJenis.Text.Trim()
-            If KodeSudahAda(kode) Then
+        Dim namaJenis As String = txtJenis.Text.Trim()
+
+        ' Cek Duplikasi
+        If KodeSudahAda(kode) Then
             MessageBox.Show("Kode Jenis sudah terdaftar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtKodeJenis.Focus()
             Exit Sub
-            End If
-            If SimpanJenis(kode, namaJenis) Then
+        End If
+
+        ' Eksekusi Simpan
+        If SimpanJenis(kode, namaJenis) Then
             MessageBox.Show("Data berhasil disimpan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             TampilData()
-                Kosong()
-            End If
-            End Sub
-    Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
+            KosongkanForm()
+        End If
+    End Sub
 
+    Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
         ErrorProvider1.Clear()
+
+        ' Validasi Input
         If Not ValidasiJenisBuku(ErrorProvider1, txtKodeJenis, txtJenis) Then Exit Sub
 
         Dim kode As String = txtKodeJenis.Text.Trim()
-            Dim namaJenis As String = txtJenis.Text.Trim()
-            If UbahJenis(kode, namaJenis) Then
+        Dim namaJenis As String = txtJenis.Text.Trim()
+
+        ' Eksekusi Ubah
+        If UbahJenis(kode, namaJenis) Then
             MessageBox.Show("Data berhasil diubah", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             TampilData()
-                Kosong()
-            Else
-            MessageBox.Show("Data tidak ditemukan", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
+            KosongkanForm()
+        Else
+            MessageBox.Show("Data tidak ditemukan atau gagal diubah", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
-End Sub
+    End Sub
+
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
+        Dim kode As String = txtKodeJenis.Text.Trim()
 
-        If txtKodeJenis.Text.Trim() = "" Then
-            MessageBox.Show("Pilih data yang akan dihapus", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-
+        If String.IsNullOrEmpty(kode) Then
+            MessageBox.Show("Pilih data yang akan dihapus melalui tabel atau masukkan Kode Jenis", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtKodeJenis.Focus()
             Exit Sub
         End If
-        Dim hasil As DialogResult
-        hasil = MessageBox.Show("Apakah data ingin dihapus?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If hasil = DialogResult.Yes Then
-            If HapusJenis(txtKodeJenis.Text.Trim()) Then
+
+        Dim konfirmasi As DialogResult = MessageBox.Show("Apakah Anda yakin ingin menghapus data ini?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If konfirmasi = DialogResult.Yes Then
+            If HapusJenis(kode) Then
                 MessageBox.Show("Data berhasil dihapus", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 TampilData()
-                Kosong()
+                KosongkanForm()
             End If
         End If
     End Sub
+
     Private Sub btnBatal_Click(sender As Object, e As EventArgs) Handles btnBatal.Click
-        Kosong()
+        KosongkanForm()
         TampilData()
     End Sub
+
+    ' --- Interaksi Grid & Input ---
+
     Private Sub dgvJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvJenis.CellClick
-
-        If e.RowIndex = 0 Then
-            txtKodeJenis.Text = dgvJenis.Rows(e.RowIndex).Cells("KodeJenis").Value.ToString()
-
-            txtJenis.Text = dgvJenis.Rows(e.RowIndex).Cells("Jenis").Value.ToString()
-
+        ' Memastikan klik bukan pada header
+        If e.RowIndex >= 0 Then
+            Try
+                txtKodeJenis.Text = dgvJenis.Rows(e.RowIndex).Cells("KodeJenis").Value.ToString()
+                txtJenis.Text = dgvJenis.Rows(e.RowIndex).Cells("Jenis").Value.ToString()
+            Catch ex As Exception
+                ' Handle jika nama kolom di dgv berbeda
+            End Try
         End If
     End Sub
-    Private Sub txtKodeJenis_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKodeJenis.KeyPress
 
+    Private Sub txtKodeJenis_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtKodeJenis.KeyPress
         If IsEnterKey(e) Then
             e.Handled = True
             Dim dt As DataTable = GetJenisByKode(txtKodeJenis.Text.Trim())
-            If dt.Rows.Count > 0 Then
-                txtKodeJenis.Text = dt.Rows(0)("kodeJenis").ToString()
 
+            If dt.Rows.Count > 0 Then
                 txtJenis.Text = dt.Rows(0)("jenis").ToString()
             Else
                 txtJenis.Clear()
@@ -94,19 +129,27 @@ End Sub
             txtJenis.Focus()
         End If
     End Sub
-    Private Sub txtJenis_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtJenis.KeyPress
 
-        HanyaHuruf(e)
+    Private Sub txtJenis_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtJenis.KeyPress
+        HanyaHuruf(e) ' Memanggil helper global
+
         If IsEnterKey(e) Then
             e.Handled = True
             btnSimpan.Focus()
         End If
     End Sub
+
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
-        If txtSearch.Text.Trim() = "" Then
+        Dim keyword As String = txtSearch.Text.Trim()
+
+        If keyword = "" Then
             TampilData()
         Else
-            dgvJenis.DataSource = SearchJenis(txtSearch.Text.Trim())
+            dgvJenis.DataSource = SearchJenis(keyword)
         End If
+    End Sub
+
+    Private Sub btnForm2_Click(sender As Object, e As EventArgs) Handles btnForm2.Click
+        Form2.Show()
     End Sub
 End Class

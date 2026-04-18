@@ -35,6 +35,7 @@ Partial Class Form1
         btnBatal = New Button()
         dgvJenis = New DataGridView()
         ErrorProvider1 = New ErrorProvider(components)
+        btnForm2 = New Button()
         CType(dgvJenis, ComponentModel.ISupportInitialize).BeginInit()
         CType(ErrorProvider1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -71,7 +72,7 @@ Partial Class Form1
         txtKodeJenis.Location = New Point(107, 19)
         txtKodeJenis.Name = "txtKodeJenis"
         txtKodeJenis.PlaceholderText = "Jenis Kode"
-        txtKodeJenis.Size = New Size(223, 23)
+        txtKodeJenis.Size = New Size(299, 23)
         txtKodeJenis.TabIndex = 3
         ' 
         ' txtJenis
@@ -79,7 +80,7 @@ Partial Class Form1
         txtJenis.Location = New Point(107, 58)
         txtJenis.Name = "txtJenis"
         txtJenis.PlaceholderText = "Jenis"
-        txtJenis.Size = New Size(223, 23)
+        txtJenis.Size = New Size(299, 23)
         txtJenis.TabIndex = 4
         ' 
         ' txtSearch
@@ -87,7 +88,7 @@ Partial Class Form1
         txtSearch.Location = New Point(107, 96)
         txtSearch.Name = "txtSearch"
         txtSearch.PlaceholderText = "Cari Buku"
-        txtSearch.Size = New Size(223, 23)
+        txtSearch.Size = New Size(299, 23)
         txtSearch.TabIndex = 5
         ' 
         ' btnSimpan
@@ -131,18 +132,28 @@ Partial Class Form1
         dgvJenis.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvJenis.Location = New Point(12, 170)
         dgvJenis.Name = "dgvJenis"
-        dgvJenis.Size = New Size(321, 94)
+        dgvJenis.Size = New Size(399, 94)
         dgvJenis.TabIndex = 10
         ' 
         ' ErrorProvider1
         ' 
         ErrorProvider1.ContainerControl = Me
         ' 
+        ' btnForm2
+        ' 
+        btnForm2.Location = New Point(336, 141)
+        btnForm2.Name = "btnForm2"
+        btnForm2.Size = New Size(75, 23)
+        btnForm2.TabIndex = 11
+        btnForm2.Text = "Form 2"
+        btnForm2.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(342, 276)
+        ClientSize = New Size(418, 276)
+        Controls.Add(btnForm2)
         Controls.Add(dgvJenis)
         Controls.Add(btnBatal)
         Controls.Add(btnHapus)
@@ -174,5 +185,6 @@ Partial Class Form1
     Friend WithEvents btnBatal As Button
     Friend WithEvents dgvJenis As DataGridView
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents btnForm2 As Button
 
 End Class

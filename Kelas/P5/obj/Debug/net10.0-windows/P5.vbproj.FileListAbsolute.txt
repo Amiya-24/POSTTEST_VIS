@@ -20,3 +20,4 @@ C:\Users\ASUS\Documents\GitHub\POSTTEST_VIS\Kelas\P5\obj\Debug\net10.0-windows\r
 C:\Users\ASUS\Documents\GitHub\POSTTEST_VIS\Kelas\P5\obj\Debug\net10.0-windows\P5.pdb
 C:\Users\ASUS\Documents\GitHub\POSTTEST_VIS\Kelas\P5\obj\Debug\net10.0-windows\P5.genruntimeconfig.cache
 C:\Users\ASUS\Documents\GitHub\POSTTEST_VIS\Kelas\P5\obj\Debug\net10.0-windows\ref\P5.dll
+C:\Users\ASUS\Documents\GitHub\POSTTEST_VIS\Kelas\P5\obj\Debug\net10.0-windows\P5.Form2.resources
