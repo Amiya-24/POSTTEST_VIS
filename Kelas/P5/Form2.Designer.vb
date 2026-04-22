@@ -23,6 +23,7 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -44,6 +45,10 @@ Partial Class Form2
         btnHapus = New Button()
         btnBatal = New Button()
         ErrorProvider1 = New ErrorProvider(components)
+        btnPreviewCetak = New Button()
+        btnCetak = New Button()
+        docLaporan = New Printing.PrintDocument()
+        dlgPreview = New PrintPreviewDialog()
         CType(dgvBuku, ComponentModel.ISupportInitialize).BeginInit()
         CType(ErrorProvider1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -179,7 +184,7 @@ Partial Class Form2
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(408, 226)
+        btnSimpan.Location = New Point(11, 226)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(75, 23)
         btnSimpan.TabIndex = 16
@@ -188,7 +193,7 @@ Partial Class Form2
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(489, 226)
+        btnUbah.Location = New Point(92, 226)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(75, 23)
         btnUbah.TabIndex = 17
@@ -197,7 +202,7 @@ Partial Class Form2
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(570, 226)
+        btnHapus.Location = New Point(173, 226)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(75, 23)
         btnHapus.TabIndex = 18
@@ -206,7 +211,7 @@ Partial Class Form2
         ' 
         ' btnBatal
         ' 
-        btnBatal.Location = New Point(651, 226)
+        btnBatal.Location = New Point(254, 226)
         btnBatal.Name = "btnBatal"
         btnBatal.Size = New Size(75, 23)
         btnBatal.TabIndex = 19
@@ -217,11 +222,41 @@ Partial Class Form2
         ' 
         ErrorProvider1.ContainerControl = Me
         ' 
+        ' btnPreviewCetak
+        ' 
+        btnPreviewCetak.Location = New Point(517, 226)
+        btnPreviewCetak.Name = "btnPreviewCetak"
+        btnPreviewCetak.Size = New Size(75, 23)
+        btnPreviewCetak.TabIndex = 20
+        btnPreviewCetak.Text = "Preview"
+        btnPreviewCetak.UseVisualStyleBackColor = True
+        ' 
+        ' btnCetak
+        ' 
+        btnCetak.Location = New Point(598, 226)
+        btnCetak.Name = "btnCetak"
+        btnCetak.Size = New Size(75, 23)
+        btnCetak.TabIndex = 21
+        btnCetak.Text = "Cetak"
+        btnCetak.UseVisualStyleBackColor = True
+        ' 
+        ' dlgPreview
+        ' 
+        dlgPreview.AutoScrollMargin = New Size(0, 0)
+        dlgPreview.AutoScrollMinSize = New Size(0, 0)
+        dlgPreview.ClientSize = New Size(400, 300)
+        dlgPreview.Enabled = True
+        dlgPreview.Icon = CType(resources.GetObject("dlgPreview.Icon"), Icon)
+        dlgPreview.Name = "PrintPreviewDialog1"
+        dlgPreview.Visible = False
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(741, 450)
+        Controls.Add(btnCetak)
+        Controls.Add(btnPreviewCetak)
         Controls.Add(btnBatal)
         Controls.Add(btnHapus)
         Controls.Add(btnUbah)
@@ -271,4 +306,8 @@ Partial Class Form2
     Friend WithEvents btnHapus As Button
     Friend WithEvents btnBatal As Button
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents btnCetak As Button
+    Friend WithEvents btnPreviewCetak As Button
+    Friend WithEvents docLaporan As Printing.PrintDocument
+    Friend WithEvents dlgPreview As PrintPreviewDialog
 End Class

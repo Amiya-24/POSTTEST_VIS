@@ -288,4 +288,34 @@ Public Module DataModule
         End Try
     End Function
 
+    Public Function GetAllBukuUntukLaporan() As DataTable
+        Dim dt As New DataTable()
+        Const query As String =
+        "SELECT " &
+        " b.kodeBuku AS KodeBuku, " &
+        " j.jenis AS JenisBuku, " &
+        " b.judul AS JudulBuku, " &
+        " b.pengarang AS Pengarang, " &
+        " b.penerbit AS Penerbit, " &
+        " b.jumlahBuku AS JumlahBuku, " &
+        " b.deskripsi AS Deskripsi " &
+        "FROM tbbuku b " &
+        "INNER JOIN tbjenis j ON b.kodeJenis = j.kodeJenis " &
+        "ORDER BY b.kodeBuku ASC"
+        Try
+            Using conn As MySqlConnection = GetConnection()
+                Using da As New MySqlDataAdapter(query, conn)
+                    da.Fill(dt)
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show(
+            "Gagal mengambil data laporan buku: " & ex.Message,
+            "Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+            )
+        End Try
+        Return dt
+    End Function
 End Module

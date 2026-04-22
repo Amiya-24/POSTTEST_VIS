@@ -1,4 +1,6 @@
-﻿Public Class Form2
+﻿Imports System.Drawing.Printing
+
+Public Class Form2
     Private Sub Kosong()
         txtKodeBuku.Clear()
         cbJenis.SelectedIndex = -1
@@ -127,5 +129,45 @@
         Else
             dgvBuku.DataSource = DataModule.SearchBuku(txtCari.Text.Trim())
         End If
+    End Sub
+
+    Private Function SiapkanDataCetak() As Boolean
+        Dim dt As DataTable = DataModule.GetAllBukuUntukLaporan()
+        If dt Is Nothing OrElse dt.Rows.Count = 0 Then
+            MessageBox.Show("Tidak ada data buku yang dapat dicetak.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return False
+        End If
+        PrintModule.SetLaporanBuku(dt)
+        Return True
+    End Function
+
+    Private Sub btnPreviewCetak_Click(sender As Object, e As EventArgs) Handles btnPreviewCetak.Click
+        Try
+            If Not SiapkanDataCetak() Then Exit Sub
+            docLaporan.DefaultPageSettings.Landscape = True
+            dlgPreview.Document = docLaporan
+            dlgPreview.ShowDialog()
+        Catch ex As Exception
+            MessageBox.Show("Terjadi kesalahan saat menampilkan preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
+        Try
+            If Not SiapkanDataCetak() Then Exit Sub
+            docLaporan.DefaultPageSettings.Landscape = True
+            docLaporan.Print()
+        Catch ex As Exception
+            MessageBox.Show(
+            "Terjadi kesalahan saat mencetak dokumen: " & ex.Message,
+            "Error",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+            )
+        End Try
+    End Sub
+
+    Private Sub docLaporan_PrintPage(sender As Object, e As PrintPageEventArgs) Handles docLaporan.PrintPage
+        PrintModule.RenderLaporanBuku(e)
     End Sub
 End Class
